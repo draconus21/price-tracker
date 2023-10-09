@@ -1,0 +1,57 @@
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+version = "0.0"
+name = "ptrack"
+authors = [{ name = "Neeth Kunnath", email = "neeth.xavier@gmail.com" }]
+description = "Track prices of flights on `flights.google.com`"
+license = { text = "MIT license" }
+keywords = ["ptrack"]
+dependencies = ["click", "matplotlib", "opencv-contrib-python", "opencv-python", "numpy"]
+requires-python = ">=3.7"
+dynamic = ["readme"]
+classifiers=[
+        "Development Status :: 2 - Pre-Alpha",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: MIT License",
+        "Natural Language :: English",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+    ]
+
+[project.optional-dependencies]
+dev = ["black", "build", "tox", "coverage", "Sphinx", "twine", "click", "black"]
+test = ["tox", "coverage", "Sphinx", "twine", "click", "black"]
+
+[project.scripts]
+ptrack = "ptrack.cli:main"
+
+[project.urls]
+repository = "https://gitlab.com/draconus21/ptrack"
+changelog = "https://gitlab.com/draconus21/ptrack/blob/master/CHANGELOG.md"
+
+[tool.setuptools.dynamic]
+readme = { file = ["README.rst", "CONTRIBUTING.rst", "HISTORY.rst"] }
+
+[tool.black]
+line-length = 120
+ignore = "E501"
+extend-exclude = '''
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.env
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+)
+'''
