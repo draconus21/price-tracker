@@ -10,7 +10,7 @@ authors = [{ name = "Neeth Kunnath", email = "neeth.xavier@gmail.com" }]
 description = "Track prices of flights on `flights.google.com`"
 license = { text = "MIT license" }
 keywords = ["ptrack"]
-dependencies = ["click", "matplotlib", "opencv-contrib-python", "opencv-python", "numpy"]
+dependencies = ["google-flight-analysis", "click", "matplotlib", "opencv-contrib-python", "opencv-python", "numpy"]
 requires-python = ">=3.7"
 dynamic = ["readme"]
 classifiers=[
